@@ -156,6 +156,8 @@ services:
   grafana:
     image: grafana/grafana:11.2.0
     container_name: adc_grafana
+    environment:
+      GF_INSTALL_PLUGINS: grafana-clickhouse-datasource
     ports:
       - "3000:3000"
     depends_on:
