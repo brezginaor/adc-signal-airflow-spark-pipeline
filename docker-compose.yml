@@ -14,6 +14,11 @@ services:
   clickhouse:
     image: clickhouse/clickhouse-server:24.8
     container_name: adc_clickhouse
+    environment:
+      CLICKHOUSE_DB: adc_signals
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: clickhouse
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
     ports:
       - "8123:8123"
       - "9000:9000"
